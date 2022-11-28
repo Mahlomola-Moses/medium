@@ -1,0 +1,14 @@
+Django==4.1.2
+django-cors-headers==3.13.0
+django-rest-knox==4.2.0
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.2.2
+importlib-metadata @ file:///C:/ci/importlib-metadata_1648562621412/work
+ipykernel==5.5.5
+ipython==7.24.1
+ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
+ipywidgets==7.6.3
+isort @ file:///tmp/build/80754af9/isort_1628603791788/work
+json5 @ file:///tmp/build/80754af9/json5_1624432770122/work
+matplotlib @ file:///C:/ci/matplotlib-suite_1647423638658/work
+matplotlib-inline==0.1.2
