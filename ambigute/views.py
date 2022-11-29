@@ -9,6 +9,7 @@ import numpy as np
 
 import nltk
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 from nltk.corpus import wordnet as wn
 from nltk.stem import PorterStemmer
 from itertools import chain
