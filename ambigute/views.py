@@ -8,6 +8,7 @@ from rest_framework import serializers
 import numpy as np
 
 import nltk
+nltk.download('wordnet')
 from nltk.corpus import wordnet as wn
 from nltk.stem import PorterStemmer
 from itertools import chain
