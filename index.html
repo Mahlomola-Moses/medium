@@ -67,6 +67,32 @@
                                 Sentiment
                             </button>
                         </div>
+                        <br>
+                        <div>
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">positive</div>
+
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill" id="pos">0</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Neutral</div>
+
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill" id="neu">0</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Negative</div>
+
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill" id="neg">0</span>
+                                </li>
+                            </ol>
+                        </div>
 
                     </div>
                     <div class="col-md-7 col-lg-8">
@@ -102,6 +128,10 @@
             function submit() {
                 $('#btnText').hide();
                 $('#btnLoad').show();
+
+                $('#pos').html(data.data.pos)
+                $('#neu').html(data.data.neu)
+                $('#neg').html(data.data.neg)
                 $("#disambigutebtn").prop("disabled", true);
                 console.log($("#exampleFormControlTextarea1").val().trim())
                 if ($("#exampleFormControlTextarea1").val().trim() === "") {
@@ -113,7 +143,7 @@
                 }
                 $.ajax({
                     type: 'POST',
-                    url: 'http://127.0.0.1:8000/api/ambigute/',
+                    url: 'https://mahlomola.pythonanywhere.com/api/ambigute/',
                     data: {
                         text: $("#exampleFormControlTextarea1").val()
                     },
@@ -173,11 +203,15 @@
                     url: 'http://127.0.0.1:8000/api/ai/',
                     dataType: 'json',
                     data: {
-                        text: $("#exampleFormControlTextarea1").val()
+                        text: $("#exampleFormControlTextarea1").val().trim()
                     },
                     success: function(data) {
-                        console.log(data);
+                        console.log(data.data.pos);
 
+
+                        $('#pos').html(data.data.pos)
+                        $('#neu').html(data.data.neu)
+                        $('#neg').html(data.data.neg)
 
                     },
                     error: function(data) {
